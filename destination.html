@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel = "stylesheet" href="css test file.css">
+</head>
+<script>
+    function initialize(){
+        visitsOut = document.getElementById("visits");
+
+        if(!sessionsStorage.numVisits){
+            sessionStorage.numVisits = 0;
+        }else{
+            sessionStorage.numVisits++;
+        }
+        display();
+    }
+    function display(){
+        visitsOut.innerHTML = sessionStorage.numVisits;
+    }
+</script>
+<body onload = "initialize();">
+    <h1>This is my Destination Page</h1>
+    <h2>I have visited here <span id = "visits"></span>times</h2>
+    <a href = "index.html"> Return to the Home Page</a><br /><br/>
+    <!--keep user on site-->
+    <a href = "http://google.com" target = "_blank">Link to Google</a>
+</body>
+<script src = "destination.html"></script>
+</html>

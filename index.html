@@ -4,116 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=\, initial-scale=1.0">
-    <link rel = "stylesheet" href="styles.css">
+    <link rel = "stylesheet" href="css test file.css">
     <title>Document</title>
     <style>
-        body{
-            background-color:cornflowerblue;
-            color:green;
-    
-        }
-        div{
-            /**text placement**/
-            /**text-align:center;**/
-            /**evens out the left and right margins**/
-            text-align:justify;
-            color:red;
-        }
-        span{
-            background-color: #A22200;
-            color:gold;
-          /**hextadecimal: color:#22A3F0;**/
-          /**deimcal color: rgb(22,117,221);**/
-          /**'alpha' controls opacity color:rgba(22,117,221,0.5);**/
-        }
-        div{
-            text-align: center;
-            color:black;
-            background-color: orange;
-            /**shortcut**/
-            font: bold 24pt comic sans ms;
-            text-decoration: underline wavy green;
-            /**text-decoration: underline;
-            text-decoration-color: green;
-            text-decoration-style: wavy;**/
-        }
-        img{
-            width:100%;
-           /** height:100%;
-            /**pushes things to one side
-            float:left;
-            padding-right: 20px;**/
-            /**text-align: center;**/
-
-        }
     </style>
-    <script>
-        function initialize(){
-            halloweenText = document.getElementId("colordiv");
-            fore = "black";
-            back = "orange";
-
-            textWidth = 100;
-
-            textOutput = document.getElementById("textdiv");
-            fontSizeOutput = document.getElementById("sizeout");
-
-            fontSize = 24;
-
-            numberOutput = document.getElementById("numout");
-            rndNum = 0;
-
-            display();
-        }
-        function changeNumber(){
-            rndNum = getRandomInteger(1, 10);
-            display();
-        }
-        /**swap algorithm**/
-        function toggleColor(){
-            /**var local only exist in this function. do display so it shows**/
-            var tmp =  fore;
-            fore = back;
-            back = tmp;
-
-            display(); 
-        }
-        function display(){
-            halloweenText.style.color = fore;
-            halloweenText.style.backgroundColor = back;
-            halloweenText.style.width = textWidth + "%";
-
-            fontSizeOutput.innerHTML = fontSize;
-            textOutput.style.fontSize = fontSize + "pt";
-        }
-        function changeWidth(w){
-            textWidth = w;
-            display();
-        }
-        function modifyFontSize(mod){
-            fontSize += mod;
-            if(font < 4) fontSize = 4;
-
-            display();
-        }
-        function getRandomInteger(lower, upper){
-            //R = parseInt(rnd * (upper-(lower-1)+lower));
-            var multiplier = upper - (lower - 1);
-            var rand = parseInt(Math.random()*multiplier)+lower;
-
-            return rnd;
-        }
+    <script>    
     </script>
 </head>
      <body onload = "initialize();">
         <h1>This is my page for external files</h1>
+        <a href = "destination.html">Link to Destination Page</a>
         <p id = "numout"></p>
         <button onlick = "changeNumber();">Change Number</button>
         <div id = "textdiv">
             I am a wonderful example of how fonts work!
         </div>
      <div id = "colordiv">
-    Click the butotn to switch me from black to orange and back again and again. Happy Halloween. 
+    Click the button to switch me from black to orange and back again and again. Happy Halloween. 
      </div>
     Text for basic css page
     <div>
@@ -144,5 +51,6 @@
     <img src = "tom baker.jpg";/>
     <img src = "matt smith.jpg";/>
     </div>
+    <script src = "utilities.js"></script>
     </body>
    
