@@ -26,21 +26,109 @@
           /**deimcal color: rgb(22,117,221);**/
           /**'alpha' controls opacity color:rgba(22,117,221,0.5);**/
         }
+        div{
+            text-align: center;
+            color:black;
+            background-color: orange;
+            /**shortcut**/
+            font: bold 24pt comic sans ms;
+            text-decoration: underline wavy green;
+            /**text-decoration: underline;
+            text-decoration-color: green;
+            text-decoration-style: wavy;**/
+        }
         img{
             width:100%;
-            height:100%;
-            /**pushes things to one side**/ 
+           /** height:100%;
+            /**pushes things to one side
             float:left;
-            padding-right: 20px;
+            padding-right: 20px;**/
+            /**text-align: center;**/
 
         }
     </style>
-    <script></script>
+    <script>
+        function initialize(){
+            halloweenText = document.getElementId("colordiv");
+            fore = "black";
+            back = "orange";
+
+            textWidth = 100;
+
+            textOutput = document.getElementById("textdiv");
+            fontSizeOutput = document.getElementById("sizeout");
+
+            fontSize = 24;
+
+            numberOutput = document.getElementById("numout");
+            rndNum = 0;
+
+            display();
+        }
+        function changeNumber(){
+            rndNum = getRandomInteger(1, 10);
+            display();
+        }
+        /**swap algorithm**/
+        function toggleColor(){
+            /**var local only exist in this function. do display so it shows**/
+            var tmp =  fore;
+            fore = back;
+            back = tmp;
+
+            display(); 
+        }
+        function display(){
+            halloweenText.style.color = fore;
+            halloweenText.style.backgroundColor = back;
+            halloweenText.style.width = textWidth + "%";
+
+            fontSizeOutput.innerHTML = fontSize;
+            textOutput.style.fontSize = fontSize + "pt";
+        }
+        function changeWidth(w){
+            textWidth = w;
+            display();
+        }
+        function modifyFontSize(mod){
+            fontSize += mod;
+            if(font < 4) fontSize = 4;
+
+            display();
+        }
+        function getRandomInteger(lower, upper){
+            //R = parseInt(rnd * (upper-(lower-1)+lower));
+            var multiplier = upper - (lower - 1);
+            var rand = parseInt(Math.random()*multiplier)+lower;
+
+            return rnd;
+        }
+    </script>
 </head>
-   <!---- <body onload = "initialize();"-->
-    <body>
+     <body onload = "initialize();">
+        <h1>This is my page for external files</h1>
+        <p id = "numout"></p>
+        <button onlick = "changeNumber();">Change Number</button>
+        <div id = "textdiv">
+            I am a wonderful example of how fonts work!
+        </div>
+     <div id = "colordiv">
+    Click the butotn to switch me from black to orange and back again and again. Happy Halloween. 
+     </div>
     Text for basic css page
     <div>
+        <p>
+            <div>Current font size: <span id = "sizeout"></span>point</div>
+            <button onclick="modifyFontSize(1);">Font Size ++</button>
+            <button onclick="modifyFontSize(-1);">Font Size --</button>
+        </p>
+        <p>
+            <button onclick = "toggleColor();">Toggle Colors</button>
+            <button onclick = "changeWidth(25);">25% Width</button>
+            <button onclick = "changeWidth(50);">50% Width</button>
+            <button onclick = "changeWidth(75);">75% Width</button>
+            <button onclick = "changeWidth(100);">100% Width</button>
+        </p>
     <!--Add <span> in <div>-->
     This is the text in my <span> span </span> in my div.
     <img src = "doctor who.jpg"/>
@@ -51,9 +139,10 @@
     <h1>Old Doctors</h1>
      <!--mines not in folder
     <img src = "images/john pertwee.jpa";/>-->
+    <div>
     <img src = "jon pertwee.jpg"/>
     <img src = "tom baker.jpg";/>
     <img src = "matt smith.jpg";/>
-
+    </div>
     </body>
    
